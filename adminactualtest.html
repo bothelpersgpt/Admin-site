@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatgpt Sign up</title>
+  <script>
+    const bannedUsers = [
+      { username: "", reason: ", we are trying to see your behavior. Contact us here: r.kamguia@stjeromeschool.net to unban you." },
+      { username: "", reason: ", we are sure you are going to be doing bad stuff. Contact r.kamguia@stjeromeschool.net to unban you." },
+      { username: "", reason: ", we are trying to see your behavior. Contact us here: r.kamguia@stjeromeschool.net to unban you." },
+      { username: "", reason: ", we are sure you are going to be doing bad stuff. Contact r.kamguia@stjeromeschool.net to unban you." },
+      { username: "", reason: ", we are sure you are going to be doing bad stuff. Contact r.kamguia@stjeromeschool.net to unban you." },
+      { username: "", reason: "It was banned because hackers were compromising it and baning player with out granted permission Admin." },
+      { username: "", reason: "It was banned because hackers were compromising it and baning player with out granted permission admin." },
+      { username: "", reason: ", we are sure you are going to be doing bad stuff. Contact r.kamguia@stjeromeschool.net to unban you." },
+      { username: "", reason: ", we are sure you are going to be doing bad stuff. Contact r.kamguia@stjeromeschool.net to unban you." },
+      { username: "", reason: "For some reason, you have got into the system and are changing it." },
+      { username: "", reason: "For some reason, you have got into the system and are changing it." },
+      // Add more banned users here...
+    ];
+
+    const terminatedPlayers = [
+      { username: "fuck", reason: "Terminated for unknown reason." },
+      { username: "bitch", reason: "Terminated for unknown reason." },
+		  { username: "Fuck", reason: "Terminated for unknown reason." },
+		  { username: "Bitch", reason: "Terminated for unknown reason." },
+		  { username: "hell", reason: "Terminated for unknown reason." },
+		  { username: "Hell", reason: "Terminated for unknown reason." },
+		 	  { username: "Noli", reason: "Terminated for  hacking and making player saying bad stuff in the username container ." },
+		 	 	  { username: "noli", reason: "Terminated for  hacking and making player saying bad stuff in the username container ." },
+		 
+      // Add more terminated users here...
+    ];
+
+    function checkBannedUser(username) {
+      for (let i = 0; i < bannedUsers.length; i++) {
+        if (bannedUsers[i].username === username) {
+          return bannedUsers[i].reason;
+        }
+      }
+      return null; // Return null if the user is not banned
+    }
+
+    function checkTerminatedPlayer(username) {
+      for (let i = 0; i < terminatedPlayers.length; i++) {
+        if (terminatedPlayers[i].username === username) {
+          return terminatedPlayers[i].reason;
+        }
+      }
+      return null; // Return null if the user is not terminated
+    }
+
+    function signUp() {
+      const code = prompt("Please enter the admin code to access the panel:");
+      
+      if (code === "Connor") {
+        const username = prompt("Enter the username to ban:");
+        const reason = prompt("Enter the reason for banning:");
+        
+        bannedUsers.push({username, reason});
+        alert("User banned successfully.");
+      } else {
+        const username = document.getElementById("username").value;
+        const bannedReason = checkBannedUser(username);
+        const terminatedReason = checkTerminatedPlayer(username);
+
+        if (bannedReason) {
+          alert("You are banned. Reason: " + bannedReason);
+        } else if (terminatedReason) {
+          alert("This user is terminated. Reason: " + terminatedReason);
+        } else {
+          alert("Sign up successful!");
+          window.location.href = "https://github.com/bothelpersgpt/chatgptbots/blob/main";
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Sign Up</h1>
+  <form onsubmit="event.preventDefault(); signUp();">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    
+    <input type="submit" value="Sign Up">
+  </form>
+
+
+  <h1>Did you know over 5,991 People came here</h1>
+</body>
+</html>
+<p>here code Connor for admin panel the code is Connor</p>
